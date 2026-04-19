@@ -11,7 +11,8 @@ public class Main {
         do{
             System.out.println("--- EXERCÍCIOS ---");
             System.out.println("1. Carros");
-            System.out.println("2. Sair");
+            System.out.println("2. Livros");
+            System.out.println("3. Sair");
 
             opcao = scanner.nextInt();
             scanner.nextLine();
@@ -71,6 +72,17 @@ public class Main {
                                 carro.frear(frear);
 
                             break;
+
+                            case 4:
+                                System.out.println("Saindo..");
+
+                            break;
+
+                            default:
+                                System.out.println("Numero invalido, tente novamente");
+
+                            break;
+
                         }
 
 
@@ -78,10 +90,74 @@ public class Main {
 
                 break;
 
+                case 2:
+                    String titulo, autor;
+                    int numPag, pagAtual;
+
+                    Livro livro = new Livro();
+
+                    System.out.println("Digite o titulo do livro: ");
+                    titulo = scanner.nextLine();
+                    livro.setTitulo(titulo);
+
+                    System.out.println("Digite o autor do livro: ");
+                    autor = scanner.nextLine();
+                    livro.setAutor(autor);
+
+                    System.out.println("Digite o numero de paginas do livro: ");
+                    numPag = scanner.nextInt();
+                    livro.setNumeroPag(numPag);
+                    scanner.nextLine();
+
+                    System.out.println("Digite a pagina atual: ");
+                    pagAtual = scanner.nextInt();
+                    livro.setAtualPag(pagAtual);;
+                    scanner.nextLine();
+
+                    do{
+                        System.out.println("--- Livro ---");
+                        System.out.println("1. Exibir status");
+                        System.out.println("2. Avancar pagina");
+                        System.out.println("3. Regredir pagina");
+                        System.out.println("4. Sair");
+
+                        opcao2 = scanner.nextInt();
+                        scanner.nextLine();
+
+                        switch(opcao2){
+                            case 1:
+                                livro.exibirStatus();
+
+                            break;
+
+                            case 2:
+                                livro.avancarPagina();
+
+                            break;
+
+                            case 3:
+                                livro.retrocederPagina();
+
+                            break;
+
+                            case 4:
+                                System.out.println("Saindo...");
+
+                            break;
+
+                            default:
+                                System.out.println("Numero invalido, tente novamente");
+
+                            break;
+
+
+                        }
+
+                    }while(opcao2 != 4);
 
             }
 
-        }while(opcao != 2);
+        }while(opcao != 3);
 
     }
 }
