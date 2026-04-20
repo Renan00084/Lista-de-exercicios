@@ -61,10 +61,16 @@ public class Carro {
     }
 
     public void frear(double decremento){
-        this.velocidadeAtual -= decremento;
+        if(decremento < 0){
+            System.out.println("Valor invalido, tente novamente");
 
-        if(getVelocidadeAtual() < 0){
-            this.velocidadeAtual = 0;
+        }else{
+            this.velocidadeAtual -= decremento;
+
+            if(this.velocidadeAtual < 0){
+                this.velocidadeAtual = 0;
+
+            }
 
         }
     }

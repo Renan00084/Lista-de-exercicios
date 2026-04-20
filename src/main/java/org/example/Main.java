@@ -14,7 +14,12 @@ public class Main {
             System.out.println("2. Livro");
             System.out.println("3. Aluno");
             System.out.println("4. Conta Bancaria");
-            System.out.println("5. Sair");
+            System.out.println("5. Produto");
+            System.out.println("6. Pessoa");
+            System.out.println("7. Animais");
+            System.out.println("8. Veiculos");
+            System.out.println("9. Colaboradores");
+            System.out.println("10. Sair");
 
             opcao = scanner.nextInt();
             scanner.nextLine();
@@ -280,9 +285,77 @@ public class Main {
                     }while(opcao2 != 4);
                 break;
 
+                case 5:
+                    int qtdProduto, qtd;
+                    String nomep;
+                    double preco;
+
+                    Produto p1 = new Produto ();
+
+                    System.out.println("Digite o nome do produto: ");
+                    nomep = scanner.nextLine();
+                    p1.setNome(nomep);
+
+                    System.out.println("Digite o preco do produto: ");
+                    preco = scanner.nextInt();
+                    p1.setPreco(preco);
+                    scanner.nextLine();
+
+                    System.out.println("Digite a quantidade de " + p1.getNome() + " no estoque atual: ");
+                    qtdProduto = scanner.nextInt();
+                    p1.setQtdProduto(qtdProduto);
+                    scanner.nextLine();
+
+                    do{
+                        System.out.println("--- PRODUTO ---");
+                        System.out.println("1. Exibir quantidade no estoque");
+                        System.out.println("2. Adicionar ao estoque");
+                        System.out.println("3. Remover do estoque");
+                        System.out.println("4. Sair");
+
+                        opcao2 = scanner.nextInt();
+                        scanner.nextLine();
+
+                        switch (opcao2){
+                            case 1:
+                                p1.exibirQtd();
+
+                            break;
+
+                            case 2:
+                                System.out.println("Digite a quantidade a ser adiconada ao estoque: ");
+                                qtd = scanner.nextInt();
+                                p1.adicionarEstoque(qtd);
+                                scanner.nextLine();
+
+                            break;
+
+                            case 3:
+                                System.out.println("Digite a quantidade a ser removida do estoque: ");
+                                qtd = scanner.nextInt();
+                                p1.removerEstoque(qtd);
+                                scanner.nextLine();
+
+                            break;
+
+                            case 4:
+                                System.out.println("Saindo...");
+
+                            break;
+
+                            default:
+                                System.out.println("Numero invalido. Tente novamente");
+
+                            break;
+                        }
+
+                    }while(opcao2 != 4);
+                break;
+
+
             }
 
-        }while(opcao != 5);
+        }while(opcao != 10);
 
     }
 }
