@@ -13,7 +13,8 @@ public class Main {
             System.out.println("1. Carro");
             System.out.println("2. Livro");
             System.out.println("3. Aluno");
-            System.out.println("4. Sair");
+            System.out.println("4. Conta Bancaria");
+            System.out.println("5. Sair");
 
             opcao = scanner.nextInt();
             scanner.nextLine();
@@ -215,10 +216,73 @@ public class Main {
                         }
 
                     }while (opcao2 != 3);
+                break;
+
+                case 4:
+                    int numeroConta;
+                    String titular;
+                    double saldo, valor;
+
+                    ContaBancaria c1 = new ContaBancaria();
+
+                    System.out.println("Digite o titular da conta: ");
+                    titular = scanner.nextLine();
+                    c1.setTitular(titular);
+
+                    System.out.println("Digite o numero da conta: ");
+                    numeroConta = scanner.nextInt();
+                    c1.setNumeroConta(numeroConta);
+                    scanner.nextLine();
+
+                    System.out.println("Digite o saldo atual da conta: ");
+                    saldo = scanner.nextInt();
+                    c1.setSaldo(saldo);
+                    scanner.nextLine();
+
+                    do{
+                        System.out.println("--- CONTA BANCARIA ---");
+                        System.out.println("1. Depositar");
+                        System.out.println("2. Sacar");
+                        System.out.println("3. Exibir saldo");
+                        System.out.println("4. Sair");
+
+                        opcao2 = scanner.nextInt();
+                        scanner.nextLine();
+
+                        switch(opcao2){
+                            case 1:
+                                System.out.println("Digite o valor a ser depositado");
+                                valor = scanner.nextInt();
+                                c1.depositar(valor);
+                                scanner.nextLine();
+                            break;
+
+                            case 2:
+                                System.out.println("Digite o valor a ser retirado");
+                                valor = scanner.nextInt();
+                                c1.sacar(valor);
+                                scanner.nextLine();
+                            break;
+
+                            case 3:
+                                c1.exibirSaldo();
+                            break;
+
+                            case 4:
+                                System.out.println("Saindo...");
+                            break;
+
+                            case 5:
+                                System.out.println("Numero invalido. Tente novamente");
+                            break;
+                        }
+
+                    }while(opcao2 != 4);
+                break;
 
             }
 
-        }while(opcao != 4);
+        }while(opcao != 5);
 
     }
 }
