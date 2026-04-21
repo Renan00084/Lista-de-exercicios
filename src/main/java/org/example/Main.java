@@ -419,7 +419,7 @@ public class Main {
 
                                 System.out.println("Digite o nome da raca de " + cachorro.getNome() + ": ");
                                 raca = scanner.nextLine();
-                                cachorro.setNome(raca);
+                                cachorro.setRaca(raca);
 
                                 System.out.println("Digite o peso do cachorro: ");
                                 peso = scanner.nextInt();
@@ -521,7 +521,135 @@ public class Main {
                 break;
 
                 case 8:
-                    
+                    do{
+                        double capacidadeCarga;
+                        String modeloV, marcaV;
+                        boolean temCarenagem;
+
+                        System.out.println("--- VEICULOS ---");
+                        System.out.println("1. Moto");
+                        System.out.println("2. Caminhao");
+                        System.out.println("3. Sair");
+
+                        opcao2 = scanner.nextInt();
+                        scanner.nextLine();
+
+                        switch(opcao2){
+                            case 1:
+                                Moto moto = new Moto();
+
+                                System.out.println("Digite a marca da moto: ");
+                                marcaV = scanner.nextLine();
+                                moto.setMarca(marcaV);
+
+                                System.out.println("Digite o modelo da moto: ");
+                                modeloV = scanner.nextLine();
+                                moto.setModelo(modeloV);
+
+                                System.out.println("Tem carenagem(?)? (1 - Sim / 0 - Nao): ");
+                                temCarenagem = scanner.hasNext();
+                                moto.setTemCarenagem(temCarenagem);
+                                scanner.nextLine();
+
+                                do{
+                                    System.out.println("--- MOTO ---");
+                                    System.out.println("1. Exibir informacoes");
+                                    System.out.println("2. Ligar");
+                                    System.out.println("3. Sair");
+
+                                    opcao3 = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    switch(opcao3){
+                                        case 1:
+                                            moto.exibirInformacao();
+
+                                            break;
+
+                                        case 2:
+                                            moto.ligar();
+
+                                            break;
+
+                                        case 3:
+                                            System.out.println("Saindo...");
+
+                                            break;
+
+                                        default:
+                                            System.out.println("Comando invalido, tente novamente");
+
+                                            break;
+                                    }
+
+                                }while (opcao3 != 3);
+
+                                break;
+
+                            case 2:
+                                Caminhao caminhao = new Caminhao();
+
+                                System.out.println("Digite a marca: ");
+                                marcaV = scanner.nextLine();
+                                caminhao.setMarca(marcaV);
+
+                                System.out.println("Digite o modelo: ");
+                                modeloV = scanner.nextLine();
+                                caminhao.setModelo(modeloV);
+
+                                System.out.println("Digite a capacidade de carga: ");
+                                capacidadeCarga = scanner.nextDouble();
+                                caminhao.setCapacidadeCarga(capacidadeCarga);
+
+                                do {
+                                    System.out.println("--- CAMINHAO ---");
+                                    System.out.println("1. Exibir informacoes");
+                                    System.out.println("2. Ligar");
+                                    System.out.println("3. Sair");
+
+                                    opcao3 = scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    switch (opcao3) {
+                                        case 1:
+                                            caminhao.exibirInformacao();
+
+                                            break;
+
+                                        case 2:
+                                            caminhao.ligar();
+
+                                            break;
+
+                                        case 3:
+                                            System.out.println("Saindo...");
+
+                                            break;
+
+                                        default:
+                                            System.out.println("Comando invalido, tente novamente");
+
+                                            break;
+                                    }
+                                }while (opcao3 != 3);
+                                break;
+
+                            case 3:
+                                System.out.println("Saindo...");
+
+                                break;
+
+                            default:
+                                System.out.println("Valor invalido, tente novamente");
+
+                                break;
+                        }
+
+                    }while (opcao2 != 3);
+                break;
+
+                case 9:
+
             }
 
         }while(opcao != 10);
