@@ -62,4 +62,23 @@ public class ContaBancaria {
         System.out.println("O seu saldo atual e de: " + getSaldo());
 
     }
+
+    /*
+    --> O codigo da questão 15 esta aqui, nao coloqeui ele pois nao consegui achar um
+    jeito de implementar sem ter que dupliicar o codigo do main, e, como o codigo ja esta
+    bem grande, resolvi nao implementar, mas o codigo esta feito e funcionando aqui
+
+    public ContaBancaria(String titular, int numero, double saldo){
+        this.saldo = saldo;
+        this.numeroConta = numero;
+        this.titular = titular;
+
+    }
+
+    public ContaBancaria(String titular, int numero){
+        this.numeroConta = numero;
+        this.titular = titular;
+        this.saldo = 0;
+
+    }*/
 }

@@ -20,7 +20,9 @@ public class Main {
             System.out.println("8. Veiculos");
             System.out.println("9. Colaboradores");
             System.out.println("10. Formas Geometricas");
-            System.out.println("11. Sair");
+            System.out.println("11. Calculadora");
+            System.out.println("12. Formatador");
+            System.out.println("13. Sair");
 
             opcao = scanner.nextInt();
             scanner.nextLine();
@@ -891,6 +893,135 @@ public class Main {
                 break;
 
                 case 11:
+                    int x, y, z;
+                    double d, e;
+
+                    do{
+                        Calculadora calculadora = new Calculadora();
+
+                        System.out.println("--- CALCULADORA ---");
+                        System.out.println("1. Multiplacao 2 numeros inteiros");
+                        System.out.println("2. Multiplacao 3 numeros inteiros");
+                        System.out.println("3. Multiplacao 2 numeros decimais");
+                        System.out.println("4. Sair");
+
+                        opcao2 = scanner.nextInt();
+                        scanner.nextLine();
+
+                        switch(opcao2){
+                            case 1:
+                                System.out.println("Digite o valor de a: ");
+                                x = scanner.nextInt();
+                                scanner.nextLine();
+
+                                System.out.println("Digite o valor de b: ");
+                                y = scanner.nextInt();
+                                scanner.nextLine();
+
+                                System.out.println("O resultado e: " + calculadora.multiplicar(x, y));
+                            break;
+
+                            case 2:
+                                System.out.println("Digite o valor de a: ");
+                                x = scanner.nextInt();
+                                scanner.nextLine();
+
+                                System.out.println("Digite o valor de b: ");
+                                y = scanner.nextInt();
+                                scanner.nextLine();
+
+                                System.out.println("Digite o valor de c: ");
+                                z = scanner.nextInt();
+                                scanner.nextLine();
+
+                                System.out.println("O resultado e: " + calculadora.multiplicar(x, y, z));
+                            break;
+
+                            case 3:
+                                System.out.println("Digite o valor de a: ");
+                                d = scanner.nextDouble();
+                                scanner.nextLine();
+
+                                System.out.println("Digite o valor de b: ");
+                                e = scanner.nextDouble();
+                                scanner.nextLine();
+
+                                System.out.println("O resultado e: " + calculadora.multiplicar(d, e));
+                            break;
+
+                            case 4:
+                                System.out.println("Saindo...");
+
+                            break;
+
+                            default:
+                                System.out.println("Comando nao encontrado, tente novamente");
+
+                            break;
+
+                        }
+
+                    }while (opcao2 != 4);
+
+                break;
+
+                case 12:
+                    String mensagem;
+                    int numero;
+                    double maiusculo;
+
+                    System.out.println("Digite a mensagem: ");
+                    mensagem = scanner.nextLine();
+
+                    do{
+                        Formatar formatar = new Formatar();
+
+                        System.out.println("--- FORMATAR ---");
+                        System.out.println("1. Mostrar a mensagem");
+                        System.out.println("2. Repetir a mensagem n vezes");
+                        System.out.println("3. Maiusculas e minusculas");
+                        System.out.println("4. Sair");
+
+                        opcao2 = scanner.nextInt();
+                        scanner.nextLine();
+
+                        switch(opcao2){
+                            case 1:
+                                formatar.imprimirMensagem(mensagem);
+
+                            break;
+
+                            case 2:
+                                System.out.println("Digite o numero de vezes a repetir: ");
+                                numero = scanner.nextInt();
+                                scanner.nextLine();
+
+                                formatar.imprimirMensagem(mensagem, numero);
+                            break;
+
+                            case 3:
+                                System.out.println("Maiusculas ou minusculas (1 - Maiusculas / 0 - Minusculas)");
+                                maiusculo = scanner.nextDouble();
+                                scanner.nextLine();
+
+                                formatar.imprimirMensagem(mensagem, maiusculo);
+                            break;
+
+                            case 4:
+                                System.out.println("Saindo...");
+
+                            break;
+
+                            default:
+                                System.out.println("Comando nao identificado, tente novamente");
+
+                            break;
+
+                        }
+                    }while (opcao2 != 4);
+                break;
+
+                case 13:
                     System.out.println("Saindo...");
 
                 break;
@@ -903,7 +1034,7 @@ public class Main {
 
             }
 
-        }while(opcao != 11);
+        }while(opcao != 13);
 
     }
 }

@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class Moto extends Veiculo{
     private boolean temCarenagem, flag = false;
 
+    private double aux;
+
     Scanner scan = new Scanner(System.in);
 
     public boolean getTemCarenagem(){
@@ -17,6 +19,7 @@ public class Moto extends Veiculo{
             if ((temCarenagem == true) || (temCarenagem == false)) {
                 this.temCarenagem = temCarenagem;
                 flag = true;
+                //sei que ta errado mas to com muuuuuuuuuiiiiiita preguiça de resolver, meia noite eu faço
 
             } else {
                 System.out.println("Valor invalido, Tente novamente");
